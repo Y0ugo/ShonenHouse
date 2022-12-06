@@ -1,7 +1,7 @@
 <header (click)="showVideo()">
 
-    <video  width="500" height="240" autoplay loop muted class="videoHeader" *ngIf="videoBoolean">
-        <source src="../assets/video/{{video}}.mp4" type="video/mp4" />
+    <video  width="500" height="240" autoplay muted class="videoHeader" *ngIf="videoBoolean"  >
+        <source src="../assets/video/{{video}}.mp4" type="video/mp4"  />
         <source src="../assets/video/{{video}}.ogg" type="video/ogg" />
       </video> 
   </header>
