@@ -1,9 +1,39 @@
 
 drag-scroll {
-    height: 220px;
+    height: 250px;
     width: 100%;
   }
   img {
     height: 200px;
-    width: 200px;
+    width: 140px;
+    margin: 0 10px;
+  }
+
+  div p {
+    text-align: center;
+    color: white;
+  }
+
+  h3 {
+    color: white;
+    margin-left: 20px;
+    
+  }
+
+  div p:nth-last-child(1) {
+    font-size: 12px;
+  }
+
+  div p:nth-last-child(2) {
+    font-size: 14px;
+  }
+
+  .price {
+    
+    width: 55px;
+    text-align: center;
+    background-color: rgb(99, 99, 99);
+    
+    transform:translate(100px, 30px)
+  
   }

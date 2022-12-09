@@ -13,6 +13,8 @@ export class AppComponent {
     { src: "assets/image/populaires/animeboy.jpg" },
     { src: "assets/image/populaires/animegirl.jpg" },
     { src: "assets/image/populaires/chainsawman1.jpg" },
-    { src: "assets/image/populaires/onepiece.jpg" }
+    { src: "assets/image/populaires/chainsawman2.jpg" },
+    { src: "assets/image/populaires/chainsawman3.jpg" },
+    { src: "assets/image/populaires/chainsawman4.jpg" },
   ];
 }

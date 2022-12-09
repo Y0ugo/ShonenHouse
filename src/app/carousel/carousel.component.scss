@@ -28,12 +28,12 @@ position: absolute;
   }
 
 .gradient2{
-  position:relative;
+  position:absolute;
 }
 
   .slide {
     
-    position: absolute;
+    
     top: 0;
     left: 0;
     width: 100%;
@@ -99,4 +99,9 @@ position: absolute;
     &.right {
       transform: rotate(225deg);
     }
+  }
+
+  h3 {
+    color: white;
+    margin-left: 20px;
   }
