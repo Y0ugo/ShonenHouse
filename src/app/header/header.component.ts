@@ -11,5 +11,6 @@ public videoHeader = document.getElementsByClassName("videoHeader");
 public videoBoolean: boolean = false;
 public showVideo(): void {
 this.videoBoolean = true;
+
 }
 }

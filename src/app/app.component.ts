@@ -10,9 +10,9 @@ export class AppComponent {
   title = 'ShonenHouse';
 
   public slides = [
-    { src: "assets/image/naruto.jpg" },
-    { src: "assets/image/bleach.jpg" },
-    { src: "assets/image/chainsawman.jpg" },
-    { src: "assets/image/onepiece.jpeg" }
+    { src: "assets/image/populaires/animeboy.jpg" },
+    { src: "assets/image/populaires/animegirl.jpg" },
+    { src: "assets/image/populaires/chainsawman1.jpg" },
+    { src: "assets/image/populaires/chainsawman2.jpg" }
   ];
 }
