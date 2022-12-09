@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MultiCarouselComponent } from './multi-carousel.component';
+import { SampleBigTextComponent } from './sample-big-text.component';
 
-describe('MultiCarouselComponent', () => {
-  let component: MultiCarouselComponent;
-  let fixture: ComponentFixture<MultiCarouselComponent>;
+describe('SampleBigTextComponent', () => {
+  let component: SampleBigTextComponent;
+  let fixture: ComponentFixture<SampleBigTextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MultiCarouselComponent ]
+      declarations: [ SampleBigTextComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MultiCarouselComponent);
+    fixture = TestBed.createComponent(SampleBigTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

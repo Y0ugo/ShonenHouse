@@ -1,15 +1,18 @@
-
+* {
+    background-color: black;
+    
+}
 nav 
 {
     width: 100%;
-   
+    padding: 15px;
     
 }
  
 nav .main_pages 
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
  
@@ -20,7 +23,7 @@ nav .main_pages img
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    margin: 0 10px;
     text-decoration: none;
     font-family: Arial, sans-serif;
     color: white;

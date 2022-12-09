@@ -4,22 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { MultiCarouselComponent } from './multi-carousel/multi-carousel.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
+import { SampleBigTextComponent } from './sample-big-text/sample-big-text.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CarouselComponent,
-    MultiCarouselComponent,
-    NavbarComponent
+    NavbarComponent,
+    SampleBigTextComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    DragScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
