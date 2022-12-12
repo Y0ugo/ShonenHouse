@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { MangasService } from './Services/Mangas/mangas.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SampleBigTextComponent } from './sample-big-text/sample-big-text.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { SampleBigTextComponent } from './sample-big-text/sample-big-text.compon
     HeaderComponent,
     CarouselComponent,
     NavbarComponent,
-    SampleBigTextComponent
+    SampleBigTextComponent,
+    InscriptionComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { SampleBigTextComponent } from './sample-big-text/sample-big-text.compon
     NgbModule,
     DragScrollModule
   ],
-  providers: [],
+  providers: [MangasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

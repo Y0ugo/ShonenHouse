@@ -1,7 +1,15 @@
 
-drag-scroll {
+drag-scroll{
     height: 250px;
     width: 100%;
+    overflow: hidden !important;
+    display: flex !important;
+
+  }
+
+  _ngcontent-mmv-c99{
+
+    display: flex !important;
   }
   img {
     height: 200px;
@@ -17,7 +25,7 @@ drag-scroll {
   h3 {
     color: white;
     margin-left: 20px;
-    
+
   }
 
   div p:nth-last-child(1) {
@@ -29,11 +37,11 @@ drag-scroll {
   }
 
   .price {
-    
+
     width: 55px;
     text-align: center;
     background-color: rgb(99, 99, 99);
-    
+
     transform:translate(100px, 30px)
-  
+
   }
