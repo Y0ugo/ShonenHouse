@@ -9,8 +9,11 @@
       <input type="password" id="password" name="pass" placeholder="Mot de passe" required formControlName="password">
     </div>
     <div>
-      <a  class="link_inscription" (click)="link_registration()">Déja un compte ?</a>
+      
       <input type="submit" value="Connexion">
+
+      <a routerLink="/inscription">Créer un compte</a>
+      <br>
       <a href="#">Mot de passe oublié ?</a>
     </div>
   </form>

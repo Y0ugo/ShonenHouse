@@ -25,10 +25,7 @@ ngOnInit(){
   })
 }
 
-link_registration(){ //methode pour rediriger vers la page INSCRIPTION
 
-  this.router.navigate(['/registration']);
-}
 
 
 

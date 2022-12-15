@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: 'full'},
   { path: 'connexion', component: ConnexionComponent},
   { path: 'acceuil', redirectTo: ''},
-  { path: 'registration', component: InscriptionComponent },
+  { path: 'inscription', component: InscriptionComponent },
   { path: '404', component: AppComponent },
   { path: '**', redirectTo: '/404' },
 
