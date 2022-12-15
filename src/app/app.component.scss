@@ -1,15 +1,14 @@
-.container {
-    display: block;
-    height: 500px;
-    width: 100%;
-
-  }
-
 
 .navbar {
   position: fixed;
   bottom: 0;
-
   width: 100%;
+  z-index: 6;
 }
 
+
+.img{
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+}

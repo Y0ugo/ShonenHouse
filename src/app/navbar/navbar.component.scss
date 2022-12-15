@@ -1,21 +1,21 @@
 * {
     background-color: rgb(55, 55, 55);
-    
+
 }
-nav 
+nav
 {
     width: 100%;
     padding: 15px;
-    
+
 }
- 
-nav .main_pages 
+
+nav .main_pages
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
- 
+
 nav .main_pages img
 {
     max-width: 30px;
@@ -28,9 +28,14 @@ nav .main_pages img
     font-family: Arial, sans-serif;
     color: white;
 }
- 
-nav a:hover 
+
+nav a:hover
 {
     background: #5A5766
 }
 
+
+a:active {
+
+    transform: scale(1.2);
+}

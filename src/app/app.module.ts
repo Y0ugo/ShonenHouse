@@ -12,11 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
-
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SampleBigTextComponent } from './sample-big-text/sample-big-text.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
     NavbarComponent,
     SampleBigTextComponent,
     InscriptionComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AccueilComponent,
+     
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ import { ConnexionComponent } from './connexion/connexion.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
-    DragScrollModule
+    DragScrollModule,
+    RouterModule,
+    CarouselModule ,
+
   ],
   providers: [MangasService],
   bootstrap: [AppComponent]

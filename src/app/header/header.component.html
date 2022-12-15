@@ -3,7 +3,7 @@
 <header (click)="showVideo()" style="background-image:url({{image_header}});" id="header">
         <img class="playButton" src="../../assets/image/boutonPlay2.png" *ngIf="!videoBoolean">
         <div class="gradient"></div>
-    <video autoplay class="videoHeader" *ngIf="videoBoolean"  >
+    <video class="videoHeader" *ngIf="videoBoolean"  >
         <source src="{{video.video}}" type="video/mp4" />
       </video>
 

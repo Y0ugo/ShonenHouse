@@ -25,10 +25,11 @@ h2 {
 }
 
 form {
-  padding: 10px 15px;
+  padding: 10px 20px;
   width: 100%;
   background: rgb(65, 65, 65);
   border: 5px solid black;
+  position: relative;
 
   div {
     display: block;
@@ -112,3 +113,11 @@ input[type="password"]:valid:focus {
 input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
+
+.link_inscription{
+
+position: absolute;
+right: 80px;
+top: 220px;
+}
+

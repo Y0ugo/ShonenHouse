@@ -7,26 +7,13 @@
 
 <br>
 <!-- carousel -->
-<div class="carousel">
-    <ng-container *ngFor="let slide of slides; let i = index">
-      
-      <div class="imageContainer">
-      <img
-        *ngIf="i === currentSlide"
-        [src]="slide.src"
-        class="slide"
-      />
-    </div>
 
-    
+<owl-carousel-o [options]="customOptions">
+
+  <ng-container>
+    <ng-template carouselSlide *ngFor="let slide of slides; let i = index">
+      <img [src]="slides[i]" >
+    </ng-template>
   </ng-container>
-  <div class="gradient2"></div>
-  
-    <!-- controls -->
-    <button class="control prev" (click)="onPreviousClick()">
-      <span class="arrow left"></span>
-    </button>
-    <button class="control next" (click)="onNextClick()">
-      <span class="arrow right"></span>
-    </button>
-  </div>
+
+</owl-carousel-o>

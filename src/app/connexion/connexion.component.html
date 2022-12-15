@@ -1,19 +1,20 @@
-<form action="">
+<form action="" [formGroup]="loginForm" (ngSubmit)="login()">
     <h2>Connexion</h2>
     <div>
-      <label for="login">Identifiant</label>
-      <input type="text" id="login" name="login" placeholder="Identifiant" required>
+      <label for="login">Email</label>
+      <input type="email" id="login" name="email" placeholder="Email" required formControlName="email">
     </div>
     <div>
       <label for="password">Mot de passe</label>
-      <input type="password" id="password" name="pass" placeholder="Mot de passe" required>
+      <input type="password" id="password" name="pass" placeholder="Mot de passe" required formControlName="password">
     </div>
     <div>
+      <a  class="link_inscription" (click)="link_registration()">Déja un compte ?</a>
       <input type="submit" value="Connexion">
       <a href="#">Mot de passe oublié ?</a>
     </div>
   </form>
-
+  <p *ngIf="!Verif_user" style="background-color: red; color: white;">Le mot de passe oû l'email est incorrect</p>
   <br>
   <br>
   <br>

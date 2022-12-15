@@ -1,27 +1,54 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input,OnInit} from '@angular/core';
+import { MangasService } from '../Services/Mangas/mangas.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent {
-  @Input() slides: any;
+export class CarouselComponent implements OnInit{
 
-  currentSlide = 0;
+public nbr_img: Number = 4;
+  public slides: string[] = [];
+  constructor(private mangas: MangasService) {
 
-  constructor() {}
-
-  onPreviousClick() {
-    const previous = this.currentSlide - 1;
-    this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
-    console.log("previous clicked, new current slide is: ", this.currentSlide);
   }
 
-  onNextClick() {
-    const next = this.currentSlide + 1;
-    this.currentSlide = next === this.slides.length ? 0 : next;
-    console.log("next clicked, new current slide is: ", this.currentSlide);
+
+  ngOnInit() {
+
+    for(let i =0 ; i < this.nbr_img; i++){
+      this.slides.push(this.mangas.list_mangas[i].img_mangas)
+      console.log(this.slides[i]);
+
+    }
   }
-  
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1
+      }
+    },
+    nav: false
+  }
+
 }
