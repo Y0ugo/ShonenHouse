@@ -12,7 +12,7 @@ public video: any;
 public header_video: any
 public image_header: any;
 public mangas:any;
-public videoHeader = document.getElementsByClassName("videoHeader");
+public videoHeader = document.getElementById("videoHeader");
 public videoBoolean: boolean = false;
 public numero: Number = 0;
 constructor(private list_mangas: MangasService){
@@ -28,6 +28,14 @@ ngOnInit(): void {
 public showVideo(): void {
 this.videoBoolean = true;
 this.image_header = this.header_img()
+
+}
+
+pause_video(){
+
+  if(this.videoBoolean){
+   this.videoHeader?.onpause
+  }
 
 }
 

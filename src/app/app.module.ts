@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -31,7 +30,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     InscriptionComponent,
     ConnexionComponent,
     AccueilComponent,
-     
+
+
   ],
   imports: [
     BrowserModule,
@@ -43,6 +43,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     DragScrollModule,
     RouterModule,
     CarouselModule ,
+    BrowserAnimationsModule,
+
 
   ],
   providers: [MangasService],
