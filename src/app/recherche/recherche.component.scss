@@ -20,7 +20,7 @@ h2 {
   margin: 20px;
   color: white;
   text-align: center;
-  
+
 
 }
 
@@ -113,16 +113,20 @@ input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
+form{
 
+  position: sticky;
+  top: 0;
+}
 form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
     float: left;
     width: 80%;
-   
+
   }
-  
+
   /* Style the submit button */
   form.example button {
     float: left;
@@ -135,9 +139,9 @@ form.example input[type=text] {
     border-left: none; /* Prevent double borders */
     cursor: pointer;
   }
-  
-  
-  
+
+
+
   /* Clear floats */
   form.example::after {
     content: "";
@@ -147,23 +151,27 @@ form.example input[type=text] {
 
   .listeManga {
  display: flex;
- 
+ justify-content: space-evenly;
+ flex-flow: wrap;
+    margin-bottom: 50px;
     width: 100%;
 
   }
   .mangaContainer {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-around;
-   
-    
-   
-  }
 
- .mangaContainer > img {
     width: 45%;
     height:17%;
     margin: 1%;
 
-    
+
+
+
   }
+
+
+.mangaContainer > img{
+
+  width: 100%;
+  height: 80%;
+}
+

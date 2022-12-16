@@ -7,7 +7,7 @@ import { MangasService } from '../Services/Mangas/mangas.service';
   styleUrls: ['./recherche.component.scss']
 })
 export class RechercheComponent {
-public slides: string[] = [];
+public slides: any
   constructor(private mangas: MangasService) {
 
   }
@@ -15,10 +15,9 @@ public slides: string[] = [];
 
   ngOnInit() {
 
-    for(let i =0 ; i < this.mangas.list_mangas.length; i++){
-      this.slides.push(this.mangas.list_mangas[i].img_mangas)
-      console.log(this.slides[i]);
+    this.slides = this.mangas.list_mangas;
+    console.log(this.slides);
 
-    }
+
   }
 }

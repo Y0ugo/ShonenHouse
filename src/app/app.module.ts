@@ -31,6 +31,7 @@ import { RechercheComponent } from './recherche/recherche.component';
     InscriptionComponent,
     ConnexionComponent,
     AccueilComponent,
+    RechercheComponent,
 
 
   ],

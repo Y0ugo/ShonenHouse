@@ -19,6 +19,7 @@ public verif_pass!: Boolean;
   }
   ngOnInit() {
 
+
     this.Registration_Form = this.Form_B.group({
 
       lastName:[],
