@@ -1,0 +1,15 @@
+<!-- Appel de librairie d'icones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- La forme -->
+<form class="example" action="action_page.php">
+  <input type="text" id="search" name="search" placeholder="One Piece" required formControlName="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<div class="listeManga" >
+  <div class="mangaContainer" >
+  <img *ngFor="let slide of slides; let i = index" [src]="slides[i]" >
+  
+</div>
+</div>

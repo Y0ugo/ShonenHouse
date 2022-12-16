@@ -20,7 +20,7 @@ h2 {
   margin: 20px;
   color: white;
   text-align: center;
-  font-size: em;
+  
 
 }
 
@@ -71,7 +71,6 @@ input {
   display: block;
   padding: 7px 5px;
   width: 85%;
-  
   outline: none;
   background: black;
   border:  white;
@@ -81,7 +80,6 @@ input[type="submit"] {
   margin: 20px 0px 30px;
   width: 123px;
   background: black;
-  
   color: white;
   cursor: pointer;
   transition: $transition;
@@ -91,24 +89,17 @@ input[type="submit"] {
   }
 }
 
-input[type="text"]:invalid:focus,
-input[type="password"]:invalid:focus, 
-input[type="email"]:invalid:focus {
+
+input[type="text"]:invalid:focus {
   background: grey;
-  border: 1px solid grey;
   transition: $transition;
-  
 }
 
-input[type="text"]:valid:focus,
+
 input[type="text"]:valid,
-input[type="password"]:valid,
-input[type="password"]:valid:focus
-input[type="email"]:valid,
-input[type="email"]:valid:focus {
+input[type="text"]:valid:focus {
   background:grey;
   color: white;
-  border: 1px solid grey;
   transition: $transition;
 }
 
@@ -120,7 +111,59 @@ input[type="email"]:valid:focus {
 
 input:focus::-webkit-input-placeholder {
   opacity: 0;
-  
 }
 
 
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+   
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: grey;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .listeManga {
+ display: flex;
+ 
+    width: 100%;
+
+  }
+  .mangaContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+   
+    
+   
+  }
+
+ .mangaContainer > img {
+    width: 45%;
+    height:17%;
+    margin: 1%;
+
+    
+  }

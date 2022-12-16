@@ -19,6 +19,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { RechercheComponent } from './recherche/recherche.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     InscriptionComponent,
     ConnexionComponent,
     AccueilComponent,
+    RechercheComponent,
      
   ],
   imports: [
