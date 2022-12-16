@@ -2,14 +2,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- La forme -->
-<form class="example" action="action_page.php">
-  <input type="text" id="search" name="search" placeholder="One Piece" required >
+<form class="example" action="" [formGroup]="search_mangas" (ngSubmit)="mangas_value()">
+  <input type="text" id="search" name="search" placeholder="One Piece" required  formControlName='search'>
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
 
-<div class="listeManga" >
+<div class="listeManga"  *ngIf="!booleen_result">
   <div class="mangaContainer" *ngFor="let slide of slides; let i = index">
-  <img  [src]="slides[i].img_mangas" >
+  <img  [src]="slides[i].img_mangas" (click)="show_mangas(i)" >
     <p>{{slides[i].name}}</p>
+</div>
+</div>
+
+<div class="listeManga"  *ngIf="booleen_result">
+  <div class="mangaContainer" *ngFor="let result of resultat; let i = index">
+  <img  [src]="resultat[i].img_mangas" (click)="show_mangas(i)" >
+    <p>{{resultat[i].name}}</p>
 </div>
 </div>
