@@ -38,17 +38,17 @@ static verif_password(group: FormGroup){
   }
 
   ngOnInit() {}
-
   registration_New_User(){
 
     this.new_user = {
-        this.registration_Form.value.lastName,
-        this.registration_Form.value.firstName,
-        this.registration_Form.value.email,
-        this.registration_Form.value.password,
-        this.registration_Form.value.create_date,
-        'User',
-        '',
+        lastName: this.registration_Form.value.lastName,
+        firstName: this.registration_Form.value.firstName,
+        email: this.registration_Form.value.email,
+        password: this.registration_Form.value.password,
+        create_date: this.registration_Form.value.create_date,
+        roles: ['User'],
+        liste_achat: [''],
+        panier: ['']
     }
 
       this.service_user.addUser(this.new_user);

@@ -22,6 +22,7 @@ import { RechercheComponent } from './recherche/recherche.component';
 import {AngularFireModule} from '@angular/fire/compat'
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { environment } from './environnements/environnements';
+import { PanierComponent } from './panier/panier.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { environment } from './environnements/environnements';
     ConnexionComponent,
     AccueilComponent,
     RechercheComponent,
+    PanierComponent,
 
 
 

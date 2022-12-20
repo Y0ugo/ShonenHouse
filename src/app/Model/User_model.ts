@@ -6,8 +6,8 @@ export interface User_model{
           email: string,
          password: string,
           create: Date,
-         roles: [],
-         liste_achat: [],
-         panier: []
+         roles: string[],
+         liste_achat: string[],
+         panier: string[]
 
 }
