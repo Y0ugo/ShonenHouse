@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { UserService } from '../Services/Users/user.service';
 import { User_model } from '../Model/User_model';
 
@@ -11,60 +11,55 @@ import { User_model } from '../Model/User_model';
 })
 export class InscriptionComponent  implements OnInit{
 
-Registration_Form!: FormGroup;
-public verif_pass!: Boolean;
+public registration_Form!: FormGroup;
 
-  constructor(public router: Router, private Form_B: FormBuilder, private liste_user: UserService){
+public new_user: any;
 
-  }
-  ngOnInit() {
+static verif_password(group: FormGroup){
+  console.log(group)
+  return group.get('password')?.value === group.get('check_password')?.value ? null : { passwordError: true };
+}
 
+  constructor(public router: Router, private Form_B: FormBuilder, private service_user: UserService){
+    this.registration_Form = this.Form_B.group({
 
-    this.Registration_Form = this.Form_B.group({
-
-      lastName:[],
-      firstName:[],
-      email:[],
-      create_date:[],
-      password:[],
-      check_password:[],
+      lastName: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(3)]],
+      firstName: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.maxLength(40), Validators.email]],
+      create_date: ['', [Validators.required]],
+      passwordGroup: this.Form_B.group({
+        password: ['', {validators: [Validators.required, Validators.maxLength(110), Validators.minLength(3)], updateOn: 'blur'}],
+        check_password: ['', {validators: [Validators.required, Validators.maxLength(110), Validators.minLength(3)], updateOn: 'blur'}],
+      }, {
+        validator: InscriptionComponent.verif_password,
+      }
+      )
     })
   }
 
-
-  verif_password(){
-    return this.Registration_Form.value.password == this.Registration_Form.value.check_password ? true : false;
-
-  }
-
+  ngOnInit() {}
 
   registration_New_User(){
 
-    this.verif_password();
+    this.new_user = {
+        this.registration_Form.value.lastName,
+        this.registration_Form.value.firstName,
+        this.registration_Form.value.email,
+        this.registration_Form.value.password,
+        this.registration_Form.value.create_date,
+        'User',
+        '',
+    }
 
-    if(this.verif_password()){
+      this.service_user.addUser(this.new_user);
 
-      this.liste_user.Users.push(
-        new User_model(
-          this.Registration_Form.value.lastName,
-          this.Registration_Form.value.firstName,
-          this.Registration_Form.value.email,
-          this.Registration_Form.value.password,
-          this.Registration_Form.value.create_date,
-          'User',
-          '',
-          )
-      )
-      this.verif_pass = true;
-      console.log(this.liste_user.Users);
-
-      this.router.navigate(['']);
+    this.router.navigate(['']);
 
 
-    }else this.verif_pass = false;
+  }
 
-    console.log(this.liste_user.Users);
-
+  public printLog(): void {
+    console.log(this.registration_Form);
   }
 
 }

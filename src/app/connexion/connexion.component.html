@@ -8,16 +8,14 @@
       <label for="password">Mot de passe</label>
       <input type="password" id="password" name="pass" placeholder="Mot de passe" required formControlName="password">
     </div>
-    <div>
-      
-      <input type="submit" value="Connexion">
+    <div style="margin: 0 50px;">
+
+      <input type="submit" value="Connexion" [disabled]="loginForm.invalid">
 
       <a routerLink="/inscription">Créer un compte</a>
       <br>
       <a href="#">Mot de passe oublié ?</a>
     </div>
+    <p *ngIf="!Verif_user" style="background-color: red; color: white; padding: 1rem;">Le mot de passe oû l'email est incorrect</p>
   </form>
-  <p *ngIf="!Verif_user" style="background-color: red; color: white;">Le mot de passe oû l'email est incorrect</p>
-  <br>
-  <br>
-  <br>
+

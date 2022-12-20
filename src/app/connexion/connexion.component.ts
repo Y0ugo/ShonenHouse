@@ -26,27 +26,25 @@ ngOnInit(){
 }
 
 
-
-
-
 login(){
 
   //METHODE APPELER LORD DU CLIC DU BUTTON "SUBMIT"
+/*
+  for(let i = 0; i< this.users.users.length;i++){
 
-  for(let i = 0; i< this.users.Users.length;i++){
-
-    if(this.users.Users[i].email == this.loginForm.value.email){
+    if(this.users.users[i].email == this.loginForm.value.email){
       console.log('ok1');
 
-        if(this.users.Users[i].password == this.loginForm.value.password){
+        if(this.users.users[i].password == this.loginForm.value.password){
             console.log('ok2');
 
           this.router.navigate(['']);
         }
 
-    }else this.Verif_user == false
+    }else {this.Verif_user = false , console.log('error');
+     }
   }
   console.log('les données sont : ' + this.loginForm.value.email + ' ' +this.loginForm.value.password );
-
+*/
 }
 }

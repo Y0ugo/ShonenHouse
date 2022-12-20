@@ -37,8 +37,6 @@ public booleen_result: Boolean = false;
 mangas_value(){
 
 
-  console.log(this.search_mangas.value.search);
-
   for(let mangas of  this.mangas.list_mangas){
 
     if(mangas.name.toLowerCase() == this.search_mangas.value.search){
@@ -51,7 +49,7 @@ mangas_value(){
 
 
     }else{
-            ///
+            /// faire le innerHTML en cas de non resultat 
     }
   }
 

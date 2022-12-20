@@ -75,7 +75,7 @@ input {
   border:  white;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   margin: 20px 0px 30px;
   width: 123px;
   background: black;
@@ -117,4 +117,11 @@ input[type="email"]:valid:focus {
 
 input:focus::-webkit-input-placeholder {
   opacity: 0;
+}
+
+
+.btn-group > a {
+
+  max-width: 50%;
+
 }

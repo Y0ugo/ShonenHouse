@@ -19,6 +19,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { RechercheComponent } from './recherche/recherche.component';
+import {AngularFireModule} from '@angular/fire/compat'
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { environment } from './environnements/environnements';
 
 
 @NgModule({
@@ -34,6 +37,7 @@ import { RechercheComponent } from './recherche/recherche.component';
     RechercheComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,9 @@ import { RechercheComponent } from './recherche/recherche.component';
     RouterModule,
     CarouselModule ,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+
 
 
   ],
