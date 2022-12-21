@@ -1,16 +1,29 @@
 <h3>Dernières sorties</h3>
 <br />
 <drag-scroll>
+
   <div *ngFor="let book of mangas.list_mangas; let i = index">
 
-    <div drag-scroll-item >
-      <div class="price">{{ mangas.list_mangas[i].price }}</div>
-      <img src="{{ mangas.list_mangas[i].img_tome }}" />
+    <div drag-scroll-item>
+      <div class="price">{{ book.price }}</div>
+      <a href="#lightbox" class="target-trigger" id="back">
+        <img src="{{ book.img_tome }}" />
 
-    <p>{{ mangas.list_mangas[i].name }}  {{ mangas.list_mangas[i].tome }}</p>
+        <p>{{ book.name }} {{ book.tome }}</p>
 
-      <p>{{ mangas.list_mangas[i].author }}</p>
+        <p>{{ book.author }}</p>
+      </a>
+
+      <div id="lightbox">
+        <a href="#back">
+
+          <img src="{{ book.img_tome }}" alt="forest landscape" style="width: 240px; height: 350px ; ">
+
+          <p>Click to close</p>
+        </a>
+
+      </div>
     </div>
-    </div>
+  </div>
 
 </drag-scroll>

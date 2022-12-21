@@ -45,3 +45,46 @@ drag-scroll{
     transform:translate(100px, 30px)
 
   }
+
+  
+  
+  .target-trigger:hover, #lightbox a:hover {
+    box-shadow: rgb(0, 0, 0) 0px 0px 2px;
+   
+  }
+  
+  .target-trigger:hover p {
+    display: block;
+    
+  }
+  
+  #lightbox, #back:target #lightbox {
+    display: none;
+   
+  }
+  
+  /* the style in target will be activated when link targeting it is clicked */
+  #lightbox:target {
+    display: flex;
+    background:rgb(0 0 0 / 80%);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #lightbox a {
+    
+    position: relative;
+    
+  }
+  
+  .target-trigger:hover p, #lightbox a:hover p {
+    display: block;
+    
+  }
+  
