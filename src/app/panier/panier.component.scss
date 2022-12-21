@@ -1,147 +1,137 @@
-body {
-    background-color: grey;
- 
-   
-  }
-  
-  .clearfix {
-    content: "";
-    display: table;
-    clear: both;  
-  }
-  
 
+:host {
+    background-color: #0000;
+    min-height: 100vh;
+  }
   
  
   .container {
-    background-color: rgb(65, 65, 65);
+   
     font-family: 'Open Sans', sans-serif;
     margin: 0 auto;
     width: 100%;
+    height: 100%;
+    padding-right: 10px;
    
   }
   
 
+  //---------------------------------------------------ARTICLE---------------------------------------------------------------//
+
   .product {
+    
     border: 1px solid #eee;
     margin: 20px 0;
-    width: 100%;
-    position: relative;
+    padding: 10px;
+    background-color:  rgb(65, 65, 65);
   }
   
   .product img {
     width: 100%;
     height: 100%;
+   
+    margin-left: 10%;
   }
   
   .product header, .product .content {
     display: flex;
-    background-color:  rgb(65, 65, 65);
+    justify-content: space-between;
+    display: flex;
    
-    
-  }
-  
-  .product header {
-    background: #000;
-    width: 50%;
-  }
-  
-  .product header h3 {
-    background: grey;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 20px;
-    margin: 0;
-    padding: 0 30px;
-    position: absolute;
-    
+    height: 140px;
   }
   
 
   .product .content {
-    box-sizing: border-box;
-    padding: 0 20px;
-    width: 75%;
+    padding: 0 5px;
+  }
+
+  .contentCustom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
   }
   
+  //----------------------------------TITRE PRODUIT-------------------------------//
   .product h1 {
     color: white;
     font-size: 95%;
-    font-weight: 300;
-    margin: 17px 0 20px 0;
+    font-weight: 300; 
   }
-  
-  .product footer.content {
-    height: 50px;
-    margin: 6px 0 0 0;
-    padding: 0;
+
+  .product p {
+    margin-top: 5px;
+    color:rgb(188, 188, 188);
+    font-size: 80%;
   }
-  
-  .product footer .price {
-    background: #fcfcfc;
-    color: #000;
+
+  //--------------------------------------PRIX------------------------------------//
+  .prix {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .product footer .price { 
     font-size: 15px;
    font-weight: 100;
-    line-height: 49px;
-    margin: 0;
-    padding: 0 5%;
   }
   
+
   .product footer .full-price {
-    background: grey;
+    background:black;
     color: #fff;
     float: right;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
-    line-height: 49px;
-    margin: 0;
-    padding: 0 5%;
-  
-    -webkit-transition: margin .15s linear;
-    -moz-transition: margin .15s linear;
-    -ms-transition: margin .15s linear;
-    -o-transition: margin .15s linear;
-    transition: margin .15s linear;
+    line-height: 40px;
   }
   
-  .qt, .qt-plus, .qt-minus {
-    display: block;
-    float: left;
+  //-----------------------------  BOUTON + ET -  -------------------------------//
+
+  .increase {
+    background-color: #000000;
+    width: 55%;
+    border-radius: 5px;
   }
-  
+
   .qt {
-    font-size: 19px;
-    line-height: 50px;
-    width: 70px;
+    font-size: 15px;
     text-align: center;
+    margin: 8px;
+    padding: 5px;
+    
   }
   
   .qt-plus, .qt-minus {
-    background: #000000;
-    border: none;
-    font-size: 30px;
-    font-weight: 300;
-    height: 100%;
-    padding: 0 20px;
+    background: grey;
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 0 10%;
     
   }
   
   .qt-plus:hover, .qt-minus:hover {
-    background: grey;
+    background: rgb(49, 49, 49);
     color: #fff;
     cursor: pointer;
   }
   
-  .qt-plus {
-    line-height: 50px;
-  }
-  
-  .qt-minus {
-    line-height: 47px;
-  }
   
   
+//-----------------------------------------------------FOOTER---------------------------------------------------------------//
+
+.clearfix {
+  
+  content: "";
+  display: table;
+  clear: both; 
+  background-color:rgb(65, 65, 65);
+  
+ 
+}
+
   #site-footer h1 {
     background: #000000;
     border: 1px solid #ccc;

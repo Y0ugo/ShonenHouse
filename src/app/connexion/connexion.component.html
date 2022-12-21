@@ -1,4 +1,5 @@
-<form action="" [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="container">
+  <form action="" [formGroup]="loginForm" (ngSubmit)="login()">
     <h2>Connexion</h2>
     <div>
       <label for="login">Email</label>
@@ -18,4 +19,4 @@
     </div>
     <p *ngIf="!Verif_user" style="background-color: red; color: white; padding: 1rem;">Le mot de passe oû l'email est incorrect</p>
   </form>
-
+</div>
