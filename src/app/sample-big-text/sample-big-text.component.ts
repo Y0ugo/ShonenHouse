@@ -1,4 +1,5 @@
 import { Component , Injectable, OnInit} from '@angular/core';
+import { Mangas_model } from '../Model/Mangas_model';
 import { MangasService } from '../Services/Mangas/mangas.service';
 
 @Component({
@@ -13,15 +14,24 @@ import { MangasService } from '../Services/Mangas/mangas.service';
 
 export class SampleBigTextComponent implements OnInit {
 
-  public mangas: any;
+  public mangas!: Mangas_model[];
+  public currentManga!: Mangas_model;
+  public toggle: boolean;
 
-  constructor(private list_mangas: MangasService){ }
+  constructor(public mangasService: MangasService){
+    this.toggle = false;
+  }
 
+  ngOnInit(): void {
+    this.mangas = this.mangasService.list_mangas;
+    //console.log(this.mangas, this.mangas.list_mangas[1].name);
 
-ngOnInit(): void {
-  this.mangas = this.list_mangas;
-  //console.log(this.mangas, this.mangas.list_mangas[1].name);
+  }
 
-}
+  public showModal(index: number): void {
+    console.log('coucou')
+    this.toggle = true;
+    this.currentManga = this.mangas[index];
+  }
 
 }

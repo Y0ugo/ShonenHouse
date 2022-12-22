@@ -1,29 +1,35 @@
+<div *ngIf="toggle">
+  <div (click)="toggle = false" id="lightbox">
+    <div class="price">{{ currentManga.price }}</div>
+    <img src="{{ currentManga.img_tome }}" alt="tomeDeManga" >
+    <button class="basket"><a>Ajouter au panier</a></button>
+    <p>Cliquez pour fermer</p>
+  </div>
+  
+</div>
+
+
+
+<section class="container">
 <h3>Dernières sorties</h3>
 <br />
+
 <drag-scroll>
+  <div *ngFor="let book of mangas; let i = index">
+      <div drag-scroll-item>
+        <div class="price">{{ book.price }}</div>
+        <div class="target-trigger" id="back" (click)="showModal(i)">
+          <img src="{{ book.img_tome }}" />
 
-  <div *ngFor="let book of mangas.list_mangas; let i = index">
+          <p>{{ book.name }} {{ book.tome }}</p>
 
-    <div drag-scroll-item>
-      <div class="price">{{ book.price }}</div>
-      <a href="#lightbox" class="target-trigger" id="back">
-        <img src="{{ book.img_tome }}" />
-
-        <p>{{ book.name }} {{ book.tome }}</p>
-
-        <p>{{ book.author }}</p>
-      </a>
-
-      <div id="lightbox">
-        <a href="#back">
-
-          <img src="{{ book.img_tome }}" alt="forest landscape" style="width: 240px; height: 350px ; ">
-
-          <p>Click to close</p>
-        </a>
-
+          <p>{{ book.author }}</p>
+        </div>
       </div>
-    </div>
   </div>
-
 </drag-scroll>
+
+
+
+
+</section>

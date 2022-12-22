@@ -1,6 +1,8 @@
 
+
+
 drag-scroll{
-    height: 250px;
+    height: 260px;
     width: 100%;
     overflow: hidden !important;
     display: flex !important;
@@ -46,45 +48,54 @@ drag-scroll{
 
   }
 
-  
-  
-  .target-trigger:hover, #lightbox a:hover {
-    box-shadow: rgb(0, 0, 0) 0px 0px 2px;
-   
-  }
-  
-  .target-trigger:hover p {
-    display: block;
-    
-  }
-  
-  #lightbox, #back:target #lightbox {
-    display: none;
-   
-  }
-  
+
+
   /* the style in target will be activated when link targeting it is clicked */
-  #lightbox:target {
-    display: flex;
-    background:rgb(0 0 0 / 80%);
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+
+  #lightbox > img {
+    width: 250px;
+     height: 400px ;
+  }
+
+  #lightbox {
+   width: 100%;
+   height: 100%;
+   top: 0%;
+      display: flex;
+      background: rgb(0 0 0 / 80%);
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+     position: fixed;
+      z-index: 2;
   }
   
-  #lightbox a {
-    
-    position: relative;
-    
+  
+
+
+  //---------------------------------------BOUTON D'AJOUT AU PANIER------------------------------------//
+
+  .basket {
+    background-color: grey;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 100px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FFF;
+    letter-spacing: 1.98px;
+    margin-top: 10px;
+  
+
   }
   
-  .target-trigger:hover p, #lightbox a:hover p {
-    display: block;
-    
+  .basket:before {
+    background: url("https://res.cloudinary.com/dviuglhwb/image/upload/v1489676297/cart_t8m4la.svg") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    color: #fff;
+    height: 20px;
+    vertical-align: middle;
+    width: 30px;
   }
-  
