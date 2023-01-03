@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MangasService } from '../Services/Mangas/mangas.service';
-
+import { Mangas_model } from '../Model/Mangas_model';
 
 @Component({
   selector: 'app-header',
@@ -15,16 +16,29 @@ public mangas:any;
 public videoHeader = document.getElementById("videoHeader");
 public videoBoolean: boolean = false;
 public numero: Number = 0;
-constructor(private list_mangas: MangasService){
+public allBook!: Mangas_model[];
+
+public NumberRandom: number = Math.floor(Math.random() * 10 ) // liste des id des mangas
+
+constructor(private serviceMangas: MangasService){
 
 }
-ngOnInit(): void {
-  this.mangas = this.list_mangas;
-  this.header_video = this.ramdomMangas()
-  this.image_header = this.header_img();
+ngOnInit() {
 
+  this.serviceMangas.getAllMangas().subscribe(res => {
+    this.allBook = res.map(e => {
+      return{
+        id: e.payload.doc.id,
+        ...e.payload.doc.data() as{}
+      } as Mangas_model;
+    })
+  })
+  
+
+  
 }
 
+/*
 public showVideo(): void {
 this.videoBoolean = true;
 this.image_header = this.header_img()
@@ -48,16 +62,10 @@ header_img(){
   else{
     return this.video.img_mangas
   }
-}
+}*/
 
-ramdomMangas(){
-  let num = Math.floor(Math.random() * this.mangas.list_mangas.length);
 
-this.video = this.mangas.list_mangas[num];
+   
 
-console.log(this.video);
-
-return this.video
-}
 
 }

@@ -1,50 +1,79 @@
+<div class="authBlock">
+  <h2>Inscription</h2>
+  <div class="formGroup">
+    <input
+      type="text"
+      class="formControl"
+      placeholder="Email"
+      #userEmail
+      required
+    />
+  </div>
+  <div class="formGroup">
+    <input
+      type="password"
+      class="formControl"
+      placeholder="Mot de passe"
+      #userPassword
+      required
+    />
+  </div>
+  <div class="formGroup">
+    <button
+      type="button"
+      value="Sign Up"
+      (click)="
+        authenticationService.SignUp(userEmail.value, userPassword.value)">
+    S'incrire</button>
+  </div>
+</div>
+
+
+<!--
 <form action="" [formGroup]="registration_Form" (ngSubmit)="registration_New_User()">
-    <h2>Inscription</h2>
+  <h2>Inscription</h2>
+
+  <div>
+    <label for="login">Nom</label>
+    <input type="text" id="lastName" name="lastName" placeholder="Nom" formControlName='lastName'>
+  </div>
+  <div>
+    <label for="login">Prenom</label>
+    <input type="text" id="firstName" name="firstName" placeholder="Prenom" formControlName="firstName">
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" size="30" placeholder="Email" formControlName="email">
+  </div>
+
+  <div>
+      <label for="start">Start date:</label>
+      <input type="date" id="start" name="create_date" value="2018-07-22" min="1950-01-01" max="2023-12-31" formControlName="create_date" >
+  </div>
+
+  <div formGroupName="passwordGroup">
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="pass" placeholder="Mot de passe" formControlName="password">
+    </div>
 
     <div>
-      <label for="login">Nom</label>
-      <input type="text" id="lastName" name="lastName" placeholder="Nom" formControlName='lastName'>
+      <label for="password">Confirmer le mot de passe</label>
+      <input type="password" id="check_password" name="check_pass" placeholder="Confirmer le mot de passe" required formControlName="check_password">
     </div>
-    <div>
-      <label for="login">Prenom</label>
-      <input type="text" id="firstName" name="firstName" placeholder="Prenom" formControlName="firstName">
-    </div>
+  </div>
+  <p *ngIf="!registration_Form?.get('passwordGroup')?.get('check_password')?.pristine
+    && !registration_Form?.get('passwordGroup')?.get('password')?.pristine
+    && registration_Form?.get('passwordGroup')?.hasError('passwordError')"
+    style="background-color: red; color: white; padding: 10px;">Les mots de passe ne sont pas identique !!
+  </p>
 
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" size="30" placeholder="Email" formControlName="email">
-    </div>
+  <div class="btn-group" >
+    <button mat-raised-button color="primary" type="submit" [disabled]="registration_Form.invalid">Envoyer</button>
+    <a routerLink="/connexion">Vous avez déjà un compte ?</a>
+  </div>
 
-    <div>
-        <label for="start">Start date:</label>
-        <input type="date" id="start" name="create_date" value="2018-07-22" min="1950-01-01" max="2023-12-31" formControlName="create_date" >
-    </div>
+</form> 
 
-    <div formGroupName="passwordGroup">
-      <div>
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="pass" placeholder="Mot de passe" formControlName="password">
-      </div>
-
-      <div>
-        <label for="password">Confirmer le mot de passe</label>
-        <input type="password" id="check_password" name="check_pass" placeholder="Confirmer le mot de passe" required formControlName="check_password">
-      </div>
-    </div>
-    <p *ngIf="!registration_Form?.get('passwordGroup')?.get('check_password')?.pristine
-      && !registration_Form?.get('passwordGroup')?.get('password')?.pristine
-      && registration_Form?.get('passwordGroup')?.hasError('passwordError')"
-      style="background-color: red; color: white; padding: 10px;">Les mots de passe ne sont pas identique !!
-    </p>
-
-    <div class="btn-group" >
-      <button mat-raised-button color="primary" type="submit" [disabled]="registration_Form.invalid">Envoyer</button>
-      <a routerLink="/connexion">Vous avez déjà un compte ?</a>
-    </div>
-
-  </form>
-
-
-
-
-
+-->

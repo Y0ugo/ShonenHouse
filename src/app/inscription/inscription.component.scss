@@ -78,7 +78,7 @@ input {
   border:  white;
 }
 
-button[type="submit"] {
+button {
   margin: 20px 0px 30px;
   width: 123px;
   background: black;
@@ -129,4 +129,14 @@ input:focus::-webkit-input-placeholder {
 
   max-width: 50%;
 
+}
+
+
+.authBlock{
+
+  margin: 20% 0;
+  padding: 10px 15px;
+  width: 100%;
+  background: rgb(65, 65, 65);
+  border: 5px solid black;
 }

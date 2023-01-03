@@ -7,16 +7,20 @@
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
 
-<div class="listeManga"  *ngIf="!booleen_result">
-  <div class="mangaContainer" *ngFor="let slide of slides; let i = index">
-  <img  [src]="slides[i].img_mangas" (click)="show_mangas(i)" >
-    <p>{{slides[i].name}}</p>
+<div class="listeManga"  *ngIf="!booleen_result ;  else elseBlock;">
+  <div class="mangaContainer" *ngFor="let  book of allBook; let i = index">
+  <img  [src]="book.img_mangas" (click)="showBookId(book)">
+    <p>{{book.name}}</p>
 </div>
 </div>
 
-<div class="listeManga"  *ngIf="booleen_result">
-  <div class="mangaContainer" *ngFor="let result of resultat; let i = index">
-  <img  [src]="resultat[i].img_mangas" (click)="show_mangas(i)" >
-    <p>{{resultat[i].name}}</p>
+<ng-template #elseBlock>
+<div class="listeManga">
+  <div class="mangaContainer" *ngFor="let result of resultat">
+  <img [src]="result.img_mangas" (click)="showBookId(result)">
+    <p>{{result.name}}</p>
 </div>
 </div>
+</ng-template>
+
+

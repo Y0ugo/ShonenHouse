@@ -23,7 +23,12 @@ import {AngularFireModule} from '@angular/fire/compat'
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { environment } from './environnements/environnements';
 import { PanierComponent } from './panier/panier.component';
-
+import { AuthenticationService } from './Services/authentication/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
+//import { AngularFireStorageModule } from '@angular/fire/storage'; // pour accéder aux fonction de stockage et de récupération des fichiers
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { DetailMangasComponent } from './detail-mangas/detail-mangas.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,7 @@ import { PanierComponent } from './panier/panier.component';
     AccueilComponent,
     RechercheComponent,
     PanierComponent,
-
+    DetailMangasComponent,
 
 
   ],
@@ -54,11 +59,16 @@ import { PanierComponent } from './panier/panier.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    HttpClientModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+
+  //  AngularFireStorageModule
 
 
 
   ],
-  providers: [MangasService],
+  providers: [MangasService ,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

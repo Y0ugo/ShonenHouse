@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 //import { ReactiveFormsModule } from '@angular/forms';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { UserService } from '../Services/Users/user.service';
+import { AuthenticationService } from '../Services/authentication/authentication.service';
+
 
 @Component({
   selector: 'app-connexion',
@@ -14,7 +16,7 @@ export class ConnexionComponent  implements OnInit{
   loginForm!: FormGroup;
   Verif_user : Boolean = true;
 
-  constructor(public router: Router, private Form_B: FormBuilder, private users: UserService){}
+  constructor(public authenticationService: AuthenticationService, public router: Router, private Form_B: FormBuilder, private users: UserService){}
 
 
 ngOnInit(){

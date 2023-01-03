@@ -1,57 +1,72 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { MangasService } from '../Services/Mangas/mangas.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Observable } from 'rxjs';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { Mangas_model } from '../Model/Mangas_model';
+import { Route, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-recherche',
   templateUrl: './recherche.component.html',
   styleUrls: ['./recherche.component.scss']
 })
-export class RechercheComponent {
-public slides: any;
+export class RechercheComponent  implements OnInit{
 public search_mangas!: FormGroup;
 public listeManga = document.querySelector('.listeManga');
-public resultat: any[] = []; //la liste des mangas recuperer
+public resultat: any[] = []; //la liste des mangas recuperer lors de la recherche
 public booleen_result: Boolean = false;
+public allBook!: Mangas_model[];
+public mangas_id:any; 
 
-  constructor(private mangas: MangasService , private list_M: FormBuilder) {
 
+  constructor(private mangas: MangasService , private list_Mangas: FormBuilder ,private router: Router) {
+    this.search_mangas = this.list_Mangas.group({
+
+      search: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(3)]],
+
+    })
   }
-
+  
+  
 
   ngOnInit() {
 
-    this.slides = this.mangas.list_mangas;
-
-    this.search_mangas = this.list_M.group({
-
-      search: [],
-
+    this.mangas.getAllMangas().subscribe(res => {
+      this.allBook = res.map(e => {
+        return{
+          id: e.payload.doc.id,
+          ...e.payload.doc.data() as{}
+        } as Mangas_model;
+      })
     })
-
-    console.log(this.search_mangas.value.search);
+    
 
   }
 
+  showBookId(book:any){
+    this.mangas_id = book;
+    this.router.navigate(['/mangas_id',this.mangas_id.id])
+    
+}
 
 mangas_value(){
 
+  let nameSearch = this.search_mangas.value.search;
+  nameSearch = nameSearch.charAt(0).toUpperCase()+nameSearch.substr(1);// 1er lettre en majuscule
+  
+    this.allBook.map(e =>{
+      if(e.name == nameSearch){
 
-  for(let mangas of  this.mangas.list_mangas){
+        this.resultat.push(e);
+        this.booleen_result = true;
+        let num = Math.floor(Math.random() * this.allBook.length)
 
-    if(mangas.name.toLowerCase() == this.search_mangas.value.search){
+        console.log(num);
+      }
+    })
 
-      console.log(mangas);
-
-      this.resultat.push(mangas)
-      this.booleen_result = true;
-      console.log(this.resultat);
-
-
-    }else{
-            /// faire le innerHTML en cas de non resultat 
-    }
-  }
 
 }
 
@@ -59,5 +74,5 @@ mangas_value(){
 
     console.log(index);
 
-  }
+  } 
 }

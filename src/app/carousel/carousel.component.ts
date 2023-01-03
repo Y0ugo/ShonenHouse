@@ -1,6 +1,7 @@
 import { Component, Input,OnInit} from '@angular/core';
 import { MangasService } from '../Services/Mangas/mangas.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Mangas_model } from '../Model/Mangas_model';
 
 
 @Component({
@@ -10,21 +11,31 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class CarouselComponent implements OnInit{
 
-public nbr_img: Number = 4;
-  public slides: string[] = [];
-  constructor(private mangas: MangasService) {
+public nbr_like: Number = 1550;
+  public slides!: Mangas_model[];
+  public allBook!: Mangas_model[];
+
+  constructor(private mangasService: MangasService) {
 
   }
 
 
   ngOnInit() {
+ this.mangasService.getAllMangas().subscribe(res => {
+  this.allBook = res.map(e => {
+    return{
+      id: e.payload.doc.id,
+      ...e.payload.doc.data() as{}
+    } as Mangas_model;
+  })
+})
 
-    for(let i =0 ; i < this.nbr_img; i++){
-      this.slides.push(this.mangas.list_mangas[i].img_mangas)
-      console.log(this.slides[i]);
 
-    }
-  }
+
+
+}
+
+
 
   customOptions: OwlOptions = {
     loop: true,

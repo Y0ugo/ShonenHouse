@@ -1,7 +1,7 @@
 <div *ngIf="toggle">
   <div (click)="toggle = false" id="lightbox">
     <div class="price">{{ currentManga.price }}</div>
-    <img src="{{ currentManga.img_tome }}" alt="tomeDeManga" >
+    <img src="{{ currentManga.lien_tome }}{{currentManga.img_tome}}.jpeg" alt="{{currentManga.name}}" >
     <button class="basket"><a>Ajouter au panier</a></button>
     <p>Cliquez pour fermer</p>
   </div>
@@ -15,13 +15,13 @@
 <br />
 
 <drag-scroll>
-  <div *ngFor="let book of mangas; let i = index">
+  <div *ngFor="let book of allBook; let i = index">
       <div drag-scroll-item>
         <div class="price">{{ book.price }}</div>
-        <div class="target-trigger" id="back" (click)="showModal(i)">
-          <img src="{{ book.img_tome }}" />
+        <div class="target-trigger" id="back" (click)="showModal(book)">
+          <img src="{{ book.lien_tome}}{{book.img_tome}}.jpeg" />
 
-          <p>{{ book.name }} {{ book.tome }}</p>
+          <p>{{ book.name }} {{ book.img_tome }}</p>
 
           <p>{{ book.author }}</p>
         </div>

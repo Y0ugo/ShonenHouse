@@ -17,21 +17,45 @@ export class SampleBigTextComponent implements OnInit {
   public mangas!: Mangas_model[];
   public currentManga!: Mangas_model;
   public toggle: boolean;
+  public allBook!: Mangas_model[];
+  public lastArrayBook!:Mangas_model[];
+
 
   constructor(public mangasService: MangasService){
     this.toggle = false;
   }
 
   ngOnInit(): void {
-    this.mangas = this.mangasService.list_mangas;
+    //this.mangas = this.mangasService.list_mangas;
     //console.log(this.mangas, this.mangas.list_mangas[1].name);
+    this.mangasService.getAllMangas().subscribe(res => {
+      this.allBook = res.map(e => {
+        return{
+          id: e.payload.doc.id,
+          ...e.payload.doc.data() as{}
+        } as Mangas_model;
+      })
+    })
+    
+    this.lastTome();
+    
 
   }
 
-  public showModal(index: number): void {
-    console.log('coucou')
+  public lastTome(){
+
+    this.allBook.map(e =>{
+     // this.lastArrayBook.push(e.img_tome + e.tome)
+    })
+
+    console.log(this.lastArrayBook);
+    
+    
+  }
+
+  public showModal(book: Mangas_model): void {
     this.toggle = true;
-    this.currentManga = this.mangas[index];
+    this.currentManga = book;
   }
 
 }
