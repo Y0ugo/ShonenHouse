@@ -9,7 +9,7 @@
 
 <div class="listeManga"  *ngIf="!booleen_result ;  else elseBlock;">
   <div class="mangaContainer" *ngFor="let  book of allBook; let i = index">
-  <img  [src]="book.img_mangas" (click)="showBookId(book)">
+  <img  [src]="book.img_mangas" [routerLink]="['/mangas_id/'+ book.id]">
     <p>{{book.name}}</p>
 </div>
 </div>
@@ -17,7 +17,7 @@
 <ng-template #elseBlock>
 <div class="listeManga">
   <div class="mangaContainer" *ngFor="let result of resultat">
-  <img [src]="result.img_mangas" (click)="showBookId(result)">
+  <img [src]="result.img_mangas" [routerLink]="['/mangas_id/'+ result.id]">
     <p>{{result.name}}</p>
 </div>
 </div>

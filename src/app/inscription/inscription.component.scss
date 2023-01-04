@@ -124,6 +124,10 @@ input:focus::-webkit-input-placeholder {
 
 }
 
+.formGroup{
+  margin: 5px 0;
+
+}
 
 .btn-group > a {
 
@@ -135,8 +139,8 @@ input:focus::-webkit-input-placeholder {
 .authBlock{
 
   margin: 20% 0;
-  padding: 10px 15px;
   width: 100%;
+  padding-left: 50px;
   background: rgb(65, 65, 65);
   border: 5px solid black;
 }

@@ -1,0 +1,15 @@
+<form action="" [formGroup]="registration_Form" (ngSubmit)="registration_New_User()">
+    <h2>Terminer votre inscription</h2>
+    <div>
+      <label for="login">Nom</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Nom" formControlName='lastName'>
+    </div>
+    <div>
+      <label for="login">Prenom</label>
+      <input type="text" id="firstName" name="firstName" placeholder="Prenom" formControlName="firstName">
+    </div>
+    <div class="btn-group" >
+      <button mat-raised-button color="primary" type="submit" [disabled]="registration_Form.invalid">Envoyer</button>
+    </div>
+  
+  </form> 

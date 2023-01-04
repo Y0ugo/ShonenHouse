@@ -1,1 +1,16 @@
-<p>detail-mangas works!</p>
+
+<header id="header" style="background-image:url({{tomes.img_mangas}}) ">
+    <div class="gradient"></div>
+</header>
+<div class="Title_mangas">
+<h1>{{tomes.name}}</h1>
+<p>{{tomes.author}}</p>
+</div>
+<div class="block_tomes">
+    <div *ngFor="let nbr of array_nbr_tome; let i = index" id="block_img">
+    <img src="{{tomes.lien_tome}}{{nbr}}.jpeg" alt="{{tomes.name}}">
+    <p>Tome n°{{nbr}}</p>
+</div>
+</div>
+
+

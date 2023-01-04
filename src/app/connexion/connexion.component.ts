@@ -25,7 +25,11 @@ ngOnInit(){
     email: [], //instance  de FROMBUILDER
     password: [], //instance  de FROMBUILDER
   })
+
+  console.log(this.authenticationService.afAuth);
+
 }
+ 
 
 
 login(){

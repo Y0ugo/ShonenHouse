@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { MangasService } from './Services/Mangas/mangas.service';
+import { UserService } from './Services/Users/user.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { DetailMangasComponent } from './detail-mangas/detail-mangas.component';
+import { NouveauUserComponent } from './nouveau-user/nouveau-user.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { DetailMangasComponent } from './detail-mangas/detail-mangas.component';
     RechercheComponent,
     PanierComponent,
     DetailMangasComponent,
+    NouveauUserComponent,
 
 
   ],
@@ -68,7 +71,7 @@ import { DetailMangasComponent } from './detail-mangas/detail-mangas.component';
 
 
   ],
-  providers: [MangasService ,AuthenticationService],
+  providers: [MangasService ,AuthenticationService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

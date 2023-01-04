@@ -13,14 +13,18 @@ export class UserService {
 
 
   constructor(private firestore: AngularFirestore) {
-    this.firestoreCollection = firestore.collection('Users');
+    this.firestoreCollection = firestore.collection('/Users');
    }
 
 
 
    addUser(user: User_model){
-      this.firestoreCollection.add(user)
-
+      new Promise<any>(() =>{
+       this.firestoreCollection.add(user)
+       .then(resolve => console.log(user))
+       
+     })
+  
    }
 
 
@@ -29,7 +33,6 @@ export class UserService {
     this.firestoreCollection.doc(id).update({lastname:new_Lastname,
                                             firtname:new_firtname,
                                             email:new_email,
-                                            password:new_password,
                                             roles:new_roles,
                                             panier:new_panier } )
    }

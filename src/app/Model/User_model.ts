@@ -5,8 +5,6 @@ export class User_model{
        public lastname: string,
        public firtname: string,
        public  email: string,
-       
-       public password: string,
        public  createDate: Date,
        public roles: string[],
        public liste_achat: string[],
@@ -17,7 +15,6 @@ export class User_model{
         this.lastname = lastname;
         this.firtname = firtname;
         this.email = email;
-        this.password = password;
         this.createDate = createDate;
         this.roles = roles;
         this.liste_achat = liste_achat;

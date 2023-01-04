@@ -1,0 +1,136 @@
+:host {
+    background-color: #0000;
+    min-height: 100vh;
+  }
+  
+  $transition: all .3s ease-in-out;
+  
+  *,*::after,*::before {
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    min-width: 100%;
+    background: black;
+    color: white;
+  }
+  
+  h2 {
+    display: block;
+    margin: 20px;
+    color: white;
+    text-align: center;
+    font-size: em;
+  
+  }
+  
+  form {
+    margin: 20% 0;
+    padding: 10px 15px;
+    width: 100%;
+    background: rgb(65, 65, 65);
+    border: 5px solid black;
+  
+    div {
+      display: block;
+      text-align: left;
+      margin: 10px 0px;
+      width: 100%;
+    }
+  
+    a {
+      display: block;
+      color: white;
+      opacity: .7;
+      font-size: .8em;
+      transition: $transition;
+  
+      &:hover,&:active {
+        opacity: 1;
+      }
+    }
+  }
+  
+  label {
+    display: inline-block;
+    margin: 2px 0px;
+    width: 100%;
+    color: white;
+    font-size: .8em;
+    opacity: .7;
+    transition: $transition;
+    transform: scale(0);
+    transform-origin: top left;
+  }
+  
+  label.active {
+    transform: scale(1);
+  }
+  
+  input {
+    display: block;
+    padding: 7px 5px;
+    width: 85%;
+    outline: none;
+    background: black;
+    border:  white;
+  }
+  
+  button {
+    margin: 20px 0px 30px;
+    width: 123px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: $transition;
+  
+    &:hover,&:active {
+      background: black;
+    }
+  }
+  
+  input[type="text"]:invalid:focus,
+  input[type="password"]:invalid:focus,
+  input[type="email"]:invalid:focus,
+  input[type="date"]:invalid:focus {
+    background: grey;
+    transition: $transition;
+  }
+  
+  input[type="text"]:valid:focus,
+  input[type="text"]:valid,
+  input[type="password"]:valid,
+  input[type="password"]:valid:focus,
+  input[type="date"]:valid,
+  input[type="date"]:valid:focus,
+  input[type="email"]:valid,
+  input[type="email"]:valid:focus {
+    background:grey;
+    color: white;
+    transition: $transition;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: white;
+    opacity: .7;
+    transition: $transition;
+    
+  }
+  
+  input:focus::-webkit-input-placeholder {
+    opacity: 0;
+  
+  }
+  
+  .formGroup{
+    margin: 5px 0;
+  
+  }
+  
+  .btn-group > a {
+  
+    max-width: 50%;
+  
+  }

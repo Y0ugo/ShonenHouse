@@ -1,12 +1,12 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component ,Injectable,OnInit} from '@angular/core';
 import { MangasService } from '../Services/Mangas/mangas.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Observable } from 'rxjs';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import { Mangas_model } from '../Model/Mangas_model';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-
+@Injectable({
+  providedIn:'root'
+})
 @Component({
   selector: 'app-recherche',
   templateUrl: './recherche.component.html',
@@ -22,8 +22,8 @@ public mangas_id:any;
 
 
   constructor(private mangas: MangasService , private list_Mangas: FormBuilder ,private router: Router) {
-    this.search_mangas = this.list_Mangas.group({
 
+    this.search_mangas = this.list_Mangas.group({
       search: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(3)]],
 
     })
@@ -46,8 +46,9 @@ public mangas_id:any;
   }
 
   showBookId(book:any){
+    console.log(book);
     this.mangas_id = book;
-    this.router.navigate(['/mangas_id',this.mangas_id.id])
+    this.router.navigate(['/mangas_id/'+ book])
     
 }
 
