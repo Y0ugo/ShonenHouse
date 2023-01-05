@@ -12,12 +12,15 @@ import { Mangas_model } from '../Model/Mangas_model';
 export class CarouselComponent implements OnInit{
 
 public nbr_like: Number = 1550;
-  public slides!: Mangas_model[];
+  public slides_nbr: Mangas_model[] = [];
   public allBook!: Mangas_model[];
+  public allLike!: Number[];
 
-  constructor(private mangasService: MangasService) {
+  constructor(private mangasService: MangasService )  {
 
   }
+
+
 
 
   ngOnInit() {
@@ -28,12 +31,17 @@ public nbr_like: Number = 1550;
       ...e.payload.doc.data() as{}
     } as Mangas_model;
   })
-})
+
+  if(this.allBook){
+  for (let i = 0 ;i< this.allBook.length ; i++ ){
+      if(this.allBook[i].like > 1500){
+        this.slides_nbr.push(this.allBook[i])
+      }
+    }
+  }
 
 
-
-
-}
+ })}
 
 
 

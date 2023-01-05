@@ -18,7 +18,7 @@ public videoBoolean: boolean = false;
 public numero: Number = 0;
 public allBook!: Mangas_model[];
 
-public NumberRandom: number = Math.floor(Math.random() * 10 ) // liste des id des mangas
+public NumberRandom:any // liste des id des mangas
 
 constructor(private serviceMangas: MangasService){
 
@@ -32,10 +32,13 @@ ngOnInit() {
         ...e.payload.doc.data() as{}
       } as Mangas_model;
     })
-  })
-  
+      console.log('tous mes livres : ',this.allBook);
 
-  
+    this.NumberRandom = Math.floor(Math.random() * this.allBook.length)
+  })
+
+
+
 }
 
 /*
@@ -65,7 +68,7 @@ header_img(){
 }*/
 
 
-   
+
 
 
 }

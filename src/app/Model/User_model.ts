@@ -8,7 +8,8 @@ export class User_model{
        public  createDate: Date,
        public roles: string[],
        public liste_achat: string[],
-       public panier: string[]
+       public panier: string[],
+       public iduser:string,
 
       ){
 
@@ -19,6 +20,7 @@ export class User_model{
         this.roles = roles;
         this.liste_achat = liste_achat;
         this.panier = panier;
+        this.iduser = iduser;
 
       }
 }

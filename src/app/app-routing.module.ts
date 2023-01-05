@@ -18,13 +18,13 @@ const routes: Routes = [
   { path: '404', component: AppComponent },
   { path: 'panier', component: PanierComponent},
   { path: 'mangas_id/:id', component: DetailMangasComponent},
-  { path:  'nouveauUser/:email', component: NouveauUserComponent},
-  { path: '**', redirectTo: '/404' },
-  { path: 'accueil_user/:id', component:AccueilComponent},
+  { path:  'nouveauUser/:email/:result_user', component: NouveauUserComponent},
+  { path: 'accueil_user/:user', component:AccueilComponent},
+  { path: '**', redirectTo: '/404' }, //tjr en dernier
 
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ enableTracing: true })],
+  imports: [RouterModule.forRoot(routes,{ enableTracing: false})], //autorise a  mettre de trace dans la console ,utile pour les debugs
   exports: [RouterModule],
 })
 export class AppRoutingModule {

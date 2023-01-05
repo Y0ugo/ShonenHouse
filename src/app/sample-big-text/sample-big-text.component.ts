@@ -17,7 +17,7 @@ export class SampleBigTextComponent implements OnInit {
   public mangas!: Mangas_model[];
   public currentManga!: Mangas_model;
   public toggle: boolean;
-  public allBook!: Mangas_model[];
+  public allBook: Mangas_model[] = [];
   public lastArrayBook!:Mangas_model[];
 
 
@@ -36,21 +36,20 @@ export class SampleBigTextComponent implements OnInit {
         } as Mangas_model;
       })
     })
-    
-    this.lastTome();
-    
+
+    this.allBook.map(e =>{
+      // this.lastArrayBook.push(e.img_tome + e.tome)
+     })
+
+     console.log(this.lastArrayBook);
+
 
   }
 
   public lastTome(){
 
-    this.allBook.map(e =>{
-     // this.lastArrayBook.push(e.img_tome + e.tome)
-    })
 
-    console.log(this.lastArrayBook);
-    
-    
+
   }
 
   public showModal(book: Mangas_model): void {

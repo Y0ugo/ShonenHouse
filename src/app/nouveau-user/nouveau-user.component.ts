@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { UserService } from '../Services/Users/user.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../Services/authentication/authentication.service';
+
 
 
 @Injectable({
@@ -20,13 +22,16 @@ import { ActivatedRoute } from '@angular/router';
 export class NouveauUserComponent implements OnInit {
 
   public email!:any;
+  public user_result:any;
   public registration_Form!: FormGroup;
 public new_user: any;
   constructor(
     public afAuth: AngularFireAuth ,// Inject Firebase auth service
     public route : Router,
-    private Form_B: FormBuilder, private service_user: UserService,
-    private routeActive: ActivatedRoute) {
+    private Form_B: FormBuilder,
+   private service_user: UserService,
+    private routeActive: ActivatedRoute,
+    private authentication: AuthenticationService) {
 
     this.registration_Form = this.Form_B.group({
 
@@ -37,7 +42,10 @@ public new_user: any;
 
   ngOnInit(): void {
     this.email= this.routeActive.snapshot.params["email"];
-    console.log(this.routeActive.snapshot.params["email"]);
+    this.user_result = this.routeActive.snapshot.params["result_user"];
+    console.log(this.user_result);
+
+
   }
   // inscription
   async registration_New_User() {
@@ -49,10 +57,12 @@ public new_user: any;
         createDate:new Date,
         roles:['User'],
         liste_achat:[''],
-        panier:[''],   
+        panier:[''],
+        iduser:this.user_result,
       }
       this.service_user.addUser(this.new_user);
-      this.route.navigate(['']);
+      this.authentication.user = this.new_user;
+       this.route.navigate(['/accueil_user/'+this.new_user]);
       //this.route.navigate(['/accueil_user/'+this.new_user]);
 
       } catch (error) {
@@ -61,7 +71,7 @@ public new_user: any;
 
         }
 
-  
+
 
 }
 

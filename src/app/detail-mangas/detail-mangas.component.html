@@ -8,7 +8,7 @@
 </div>
 <div class="block_tomes">
     <div *ngFor="let nbr of array_nbr_tome; let i = index" id="block_img">
-    <img src="{{tomes.lien_tome}}{{nbr}}.jpeg" alt="{{tomes.name}}">
+    <img src="{{tomes.lien_tome}}{{nbr}}.jpeg" alt="{{tomes.name}}" *ngIf="tomes.lien_tome">
     <p>Tome n°{{nbr}}</p>
 </div>
 </div>
