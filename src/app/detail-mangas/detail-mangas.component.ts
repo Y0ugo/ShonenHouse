@@ -19,7 +19,7 @@ import { AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 export class DetailMangasComponent implements OnInit {
 public allBook: Mangas_model[] = [];
 public id:any;
-public array_nbr_tome: number[] = [1,2,3,4,5,6,7,8,9,10] 
+public array_nbr_tome: number[] = [1,2,3,4,5,6,7,8,9,10]
 public tomes!:any;
 
 
@@ -28,10 +28,10 @@ constructor(public recherche: RechercheComponent, private routeActive: Activated
 
 
 ngOnInit() {
-  
+
   this.id = this.routeActive.snapshot.params["id"];
   console.log(this.routeActive.snapshot.params["id"]);
-  
+
   this.serviceMangas.getAllMangas().subscribe(res => {
     this.allBook = res.map(e => {
       return{
@@ -40,13 +40,13 @@ ngOnInit() {
       } as Mangas_model;
     })
   })
-  
+
 this.tomes = this.serviceMangas.firestoreCollection.doc(this.id).valueChanges().subscribe(res => {
-  this.tomes = res;  
+  this.tomes = res;
 });
 
 
 }
-   
+
 
 }

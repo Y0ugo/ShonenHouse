@@ -60,10 +60,8 @@ public new_user: any;
         panier:[''],
         iduser:this.user_result,
       }
-      this.service_user.addUser(this.new_user);
       this.authentication.user = this.new_user;
-       this.route.navigate(['/accueil_user/'+this.new_user]);
-      //this.route.navigate(['/accueil_user/'+this.new_user]);
+      this.service_user.addUser(this.new_user);
 
       } catch (error) {
         window.alert(error);

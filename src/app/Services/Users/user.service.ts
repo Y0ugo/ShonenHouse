@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 import { User_model } from 'src/app/Model/User_model';
 
 
@@ -12,7 +13,7 @@ export class UserService {
   todoDoc!: AngularFirestoreDocument<User_model>;
 
 
-  constructor(private firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore , private route: Router) {
     this.firestoreCollection = firestore.collection('/Users');
    }
 
@@ -21,10 +22,11 @@ export class UserService {
    addUser(user: User_model){
       new Promise<any>(() =>{
        this.firestoreCollection.add(user)
-       .then(resolve => console.log(user))
-       
+       .then(resolve => this.route.navigate(['/accueil_user/'+user.iduser])
+        )
+
      })
-  
+
    }
 
 
@@ -41,6 +43,6 @@ export class UserService {
     this.firestoreCollection.doc(id).delete();
   }
 
-  
+
 }
 
